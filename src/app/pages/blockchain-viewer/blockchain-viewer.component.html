@@ -1,0 +1,20 @@
+<div class="container">
+
+    <h1>Block on our blockchain</h1>
+    <p>Each instance represents a block on the chain.</p>
+
+    <app-block-viewer  
+    *ngFor="let block of blocks" 
+    [block]="block"
+    (click)="showTransactions(block)"
+    ></app-block-viewer>
+</div>
+
+<br><br>
+
+<div class="container">
+    <h1>Transactions inside our selected block</h1>
+    <app-transactions-table
+    [transactions]="selectedBlock.transactions"
+    ></app-transactions-table>
+</div>
